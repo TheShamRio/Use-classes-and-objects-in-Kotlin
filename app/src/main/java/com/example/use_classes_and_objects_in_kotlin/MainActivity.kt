@@ -36,13 +36,11 @@ open class SmartDevice(val name: String, val category: String) {
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
-    override val deviceType = "Smart TV"
+    val deviceType = "Smart TV"
 
     private var speakerVolume by RangeRegulator(initialValue = 2, minValue = 0, maxValue = 100)
 
     private var channelNumber by RangeRegulator(initialValue = 1, minValue = 0, maxValue = 200)
-
-
 
     fun increaseSpeakerVolume() {
         speakerVolume++
@@ -62,18 +60,15 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
         )
     }
 
-
-
     override fun turnOff() {
         super.turnOff()
         println("$name turned off")
     }
 }
-
 class SmartLightDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
-    override val deviceType = "Smart Light"
+    val deviceType = "Smart Light"
 
     private var brightnessLevel by RangeRegulator(initialValue = 0, minValue = 0, maxValue = 100)
 
