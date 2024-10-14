@@ -14,8 +14,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.use_classes_and_objects_in_kotlin.ui.theme.UseclassesandobjectsinKotlinTheme
 
 class SmartDevice {
-    // empty body
+    fun turnOn() {
+        println("Smart device is turned on.")
+    }
+
+    fun turnOff() {
+        println("Smart device is turned off.")
+    }
 }
 
 fun main() {
+    val smartTvDevice = SmartDevice()
 }
