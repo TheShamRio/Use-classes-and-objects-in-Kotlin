@@ -85,6 +85,10 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
 class SmartLightDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
+    fun decreaseBrightness() {
+        brightnessLevel--
+        println("Яркость уменьшена до $brightnessLevel.")
+    }
 
     override fun printDeviceInfo() {
         super.printDeviceInfo()
