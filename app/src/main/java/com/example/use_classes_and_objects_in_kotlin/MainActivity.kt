@@ -38,6 +38,16 @@ open class SmartDevice(val name: String, val category: String) {
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
+    fun decreaseVolume() {
+        speakerVolume--
+        println("Громкость уменьшена до $speakerVolume.")
+    }
+
+    fun previousChannel() {
+        channelNumber--
+        println("Номер канала уменьшен до $channelNumber.")
+    }
+
     override fun printDeviceInfo() {
         super.printDeviceInfo()
         println("Тип устройства: $deviceType")
