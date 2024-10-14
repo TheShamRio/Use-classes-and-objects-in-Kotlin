@@ -223,11 +223,27 @@ class RangeRegulator(
 }
 
 fun main() {
-    var smartDevice: SmartDevice = SmartTvDevice("Android TV", "Entertainment")
-    smartDevice.turnOn()
+    val smartTv = SmartTvDevice("Android TV", "Развлечения")
+    val smartLight = SmartLightDevice("Google Light", "Утилита")
 
-    smartDevice = SmartLightDevice("Google Light", "Utility")
-    smartDevice.turnOn()
+    val smartHome = SmartHome(smartTv, smartLight)
+
+    // Тест функциональности телевизора
+    smartHome.turnOnTv()
+    smartHome.increaseTvVolume()
+    smartHome.changeTvChannelToNext()
+    smartHome.decreaseTvVolume()
+    smartHome.changeTvChannelToPrevious()
+    smartHome.printSmartTvInfo()
+
+    // Тест функциональности лампы
+    smartHome.turnOnLight()
+    smartHome.increaseLightBrightness()
+    smartHome.decreaseLightBrightness()
+    smartHome.printSmartLightInfo()
+
+    // Выключение всех устройств
+    smartHome.turnOffAllDevices()
 }
 
 
