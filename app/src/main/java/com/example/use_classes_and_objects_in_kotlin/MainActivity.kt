@@ -18,7 +18,9 @@ import kotlin.reflect.KProperty
 
 open class SmartDevice(val name: String, val category: String) {
 
-
+    open fun printDeviceInfo() {
+        println("Device name: $name, category: $category")
+    }
 
     var deviceStatus = "online"
         protected set
@@ -35,6 +37,11 @@ open class SmartDevice(val name: String, val category: String) {
 
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
+
+    override fun printDeviceInfo() {
+        super.printDeviceInfo()
+        println("Тип устройства: $deviceType")
+    }
 
     val deviceType = "Smart TV"
 
@@ -67,6 +74,12 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
 }
 class SmartLightDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
+
+
+    override fun printDeviceInfo() {
+        super.printDeviceInfo()
+        println("Тип устройства: $deviceType")
+    }
 
     val deviceType = "Smart Light"
 
